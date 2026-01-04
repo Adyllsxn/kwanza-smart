@@ -53,3 +53,9 @@ The goal is to practice **clean architecture**, explore modern backend patterns,
 
 - [LinkedIn](https://www.linkedin.com/in/adyllsxn/)  
 - [GitHub](https://github.com/Adyllsxn)  
+
+---
+
+## 📄 License
+
+- This project is for educational and portfolio purposes only.
