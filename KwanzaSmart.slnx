@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/apps/">
+    <Project Path="apps/KwanzaSmart.Client/KwanzaSmart.Client.csproj" />
+    <Project Path="apps/KwanzaSmart.Server/KwanzaSmart.Server.csproj" />
+  </Folder>
+</Solution>
