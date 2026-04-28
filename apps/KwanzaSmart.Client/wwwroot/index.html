@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KwanzaSmart</title>
@@ -9,33 +8,59 @@
     <link rel="preload" id="webassembly" />
     <link rel="stylesheet" href="css/app.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
-    <link href="_content/Blazorise.Icons.FontAwesome/v6/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="_content/Blazorise.Icons.FontAwesome/v6/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <link href="_content/Blazorise/blazorise.css?v=2.1.1.0" rel="stylesheet" />
-    <link href="_content/Blazorise.Tailwind/blazorise.tailwind.css?v=2.1.1.0" rel="stylesheet" />
+    <link
+      href="_content/Blazorise.Tailwind/blazorise.tailwind.css?v=2.1.1.0"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/svg" href="assets/logo.svg" />
     <link href="KwanzaSmart.Client.styles.css" rel="stylesheet" />
     <script type="importmap"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+      <div class="loading-container">
+        <div class="logo-wrapper">
+          <!-- Círculo de Progresso Moderno -->
+          <svg class="loading-progress">
+            <circle r="45%" cx="50%" cy="50%" />
+            <circle r="45%" cx="50%" cy="50%" />
+          </svg>
+          <!-- Texto ou Ícone no Centro -->
+          <div class="brand-icon">K</div>
+        </div>
+        <div class="loading-content">
+          <h1 class="brand-name">Kwanza<span>Smart</span></h1>
+          <div class="progress-wrapper">
+            <div class="progress-text-container">
+              <span class="loading-progress-text"></span>
+            </div>
+            <div class="progress-subtext">A preparar as suas finanças...</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
+      An unhandled error has occurred.
+      <a href="." class="reload">Reload</a>
+      <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-</body>
-
+  </body>
 </html>
