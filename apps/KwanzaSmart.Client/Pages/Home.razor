@@ -1,7 +1,62 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<div class="p-4 md:p-8">
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+        <div>
+            <h1 class="text-3xl font-black tracking-tight text-gray-950">
+                Kwanza<span class="text-blue-600 italic">Smart</span>
+            </h1>
+            <p class="text-gray-500 text-sm">Bem-vindo ao teu controlo financeiro.</p>
+        </div>
+        <div class="flex gap-2">
+            <Button Color="Color.Primary" Class="rounded-xl shadow-lg shadow-blue-200 py-3 px-6 font-bold flex items-center gap-2 hover:scale-105 transition-all">
+                <Icon Name="IconName.Add" /> Nova Venda
+            </Button>
+        </div>
+    </header>
 
-<h1>Hello, world!</h1>
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        @foreach (var stat in new[] { ("Saldo", "1.250.000", "text-green-600"), ("Saídas", "450.000", "text-red-500"), ("Pendente", "120.000", "text-orange-500"), ("Lucro", "680.000", "text-blue-600") })
+        {
+            <Card Class="border-none shadow-sm rounded-2xl p-2 bg-white">
+                <CardBody>
+                    <p class="text-xs uppercase font-bold text-gray-400 mb-1">@stat.Item1</p>
+                    <h2 class="text-2xl font-black @stat.Item3">@stat.Item2 <span class="text-xs font-normal">Kz</span></h2>
+                </CardBody>
+            </Card>
+        }
+    </div>
 
-Welcome to your new app.
+    <!-- Tabela de Movimentos -->
+    <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="px-6 py-5 border-b border-gray-50 flex justify-between items-center">
+            <h3 class="font-bold text-gray-800 text-lg">Movimentações Recentes</h3>
+            <Badge Color="Color.Light" Class="text-gray-500 px-3 py-1 rounded-full">Janeiro 2024</Badge>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50/50 text-[11px] uppercase font-bold text-gray-400">
+                    <tr>
+                        <th class="px-6 py-4">Data</th>
+                        <th class="px-6 py-4">Descrição</th>
+                        <th class="px-6 py-4 text-right">Valor</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    <tr class="hover:bg-gray-50/80 transition-colors">
+                        <td class="px-6 py-4 text-sm text-gray-500">Hoje, 14:20</td>
+                        <td class="px-6 py-4 font-semibold text-gray-800 italic">Venda de Software</td>
+                        <td class="px-6 py-4 text-right text-green-600 font-black">+ 45.000 Kz</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/80 transition-colors">
+                        <td class="px-6 py-4 text-sm text-gray-500">Ontem, 09:15</td>
+                        <td class="px-6 py-4 font-semibold text-gray-800 italic">Internet Unitel</td>
+                        <td class="px-6 py-4 text-right text-red-500 font-black">- 12.500 Kz</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
