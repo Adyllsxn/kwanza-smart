@@ -1,0 +1,17 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.2.4">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>89214050-cc72-4821-a245-3f4be6a98e23</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../apps/KwanzaSmart.Client/KwanzaSmart.Client.csproj" />
+    <ProjectReference Include="../../../apps/KwanzaSmart.Server/KwanzaSmart.Server.csproj" />
+    <ProjectReference Include="../KwanzaSmart.ServiceDefaults/KwanzaSmart.ServiceDefaults.csproj" IsAspireProjectResource="false" />
+  </ItemGroup>
+
+</Project>
