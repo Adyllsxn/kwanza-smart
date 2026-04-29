@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KwanzaSmart</title>
-    <base href="/" />
-    <link rel="preload" id="webassembly" />
+    <base href="/kwanza-smart/" />
     <link rel="stylesheet" href="css/app.css" />
 
     <link
@@ -28,19 +27,16 @@
     />
     <link rel="icon" type="image/svg" href="assets/logo.svg" />
     <link href="KwanzaSmart.Client.styles.css" rel="stylesheet" />
-    <script type="importmap"></script>
   </head>
 
   <body>
     <div id="app">
       <div class="loading-container">
         <div class="logo-wrapper">
-          <!-- Círculo de Progresso Moderno -->
           <svg class="loading-progress">
             <circle r="45%" cx="50%" cy="50%" />
             <circle r="45%" cx="50%" cy="50%" />
           </svg>
-          <!-- Texto ou Ícone no Centro -->
           <div class="brand-icon">K</div>
         </div>
         <div class="loading-content">
@@ -60,7 +56,7 @@
       <a href="." class="reload">Reload</a>
       <span class="dismiss">🗙</span>
     </div>
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
   </body>
 </html>
