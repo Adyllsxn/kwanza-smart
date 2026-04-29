@@ -4,6 +4,7 @@
   **Sistema inteligente de monitorização de aquicultura para Angola**
   
   [![GitHub](https://img.shields.io/badge/github-kwanza--smart-181717?style=for-the-badge&logo=github)](https://github.com/Adyllsxn/kwanza-smart)
+  [![Site](https://img.shields.io/badge/demo-site-4c1?style=for-the-badge&logo=githubpages&logoColor=white)](https://adyllsxn.github.io/kwanza-smart/)
   [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
   
   <br/>

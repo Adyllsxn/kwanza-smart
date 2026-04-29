@@ -3,4 +3,9 @@
     <Project Path="apps/KwanzaSmart.Client/KwanzaSmart.Client.csproj" />
     <Project Path="apps/KwanzaSmart.Server/KwanzaSmart.Server.csproj" />
   </Folder>
+  <Folder Name="/orchestration/" />
+  <Folder Name="/orchestration/aspire/">
+    <Project Path="orchestration/aspire/KwanzaSmart.AppHost/KwanzaSmart.AppHost.csproj" />
+    <Project Path="orchestration/aspire/KwanzaSmart.ServiceDefaults/KwanzaSmart.ServiceDefaults.csproj" />
+  </Folder>
 </Solution>
