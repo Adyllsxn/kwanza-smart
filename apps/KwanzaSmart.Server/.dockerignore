@@ -1,0 +1,53 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+**/out/
+**/publish/
+
+# IDE folders
+**/.vs/
+**/.vscode/
+**/.idea/
+
+# Git
+**/.git/
+**/.gitignore
+**/.gitattributes
+
+# Documentation
+**/docs/
+**/README.md
+**/LICENSE
+
+# Logs
+**/*.log
+**/*.logs
+
+# User-specific files
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.usertasks
+
+# Environment files
+**/.env
+**/.env.*
+**/appsettings.Development.json
+**/appsettings.Production.json
+
+# Test results
+**/TestResults/
+**/coverage/
+
+# Node modules (se tiver frontend)
+**/node_modules/
+
+# Temp files
+**/tmp/
+**/temp/
+**/*.tmp
+**/*.temp
+
+# OS metadata
+**/.DS_Store
+**/Thumbs.db
