@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  kwanzasmart-server:
+    container_name: kwanzasmart-server
+    build:
+      context: .
+      dockerfile: apps/KwanzaSmart.Server/Dockerfile
+    image: kwanzasmart/server:latest
+    ports:
+      - "5047:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    restart: unless-stopped
+    networks:
+      - kwanzasmart-network

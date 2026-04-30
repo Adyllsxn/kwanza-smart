@@ -6,13 +6,13 @@ EXPOSE 8080
 # Build image (SDK)
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
-WORKDIR /apps
+WORKDIR /src
 
-# Copy only the csproj first (for restore caching)
+# Copy csproj (caminho corrigido)
 COPY ["apps/KwanzaSmart.Server/KwanzaSmart.Server.csproj", "apps/KwanzaSmart.Server/"]
 RUN dotnet restore "apps/KwanzaSmart.Server/KwanzaSmart.Server.csproj"
 
-# Copy the rest of the source
+# Copy everything else
 COPY . .
 
 # Build
