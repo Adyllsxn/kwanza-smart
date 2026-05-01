@@ -3,3 +3,7 @@ global using KwanzaSmart.Server.Source.Domain.Abstractions.Validator;
 global using KwanzaSmart.Server.Source.Domain.Entities.Base;
 global using KwanzaSmart.Server.Source.Domain.Enums;
 global using KwanzaSmart.Server.Source.Domain.Entities; 
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using KwanzaSmart.Server.Source.Domain.Interfaces;
+global using KwanzaSmart.Server.Source.Infrastructure.Data.Context;

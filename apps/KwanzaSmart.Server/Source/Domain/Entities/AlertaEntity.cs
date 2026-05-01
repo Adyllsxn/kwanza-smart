@@ -9,19 +9,28 @@ public sealed class AlertaEntity : EntityBase
     public DateTime Timestamp { get; private set; }
     public bool Lida { get; private set; }
     public decimal ValorRegistado { get; private set; }
+    
+    // Foreign Key
+    public Guid LeituraSensorId { get; private set; }
+    #endregion
+
+    #region Navigation Properties
+    public LeituraSensorEntity? LeituraSensor { get; private set; }
     #endregion
 
     #region Constructors
     private AlertaEntity() { }
 
-    public AlertaEntity(TipoSensor tipo, string mensagem, Gravidade gravidade, decimal valorRegistado)
+    public AlertaEntity(TipoSensor tipo, string mensagem, Gravidade gravidade, decimal valorRegistado, Guid leituraSensorId)
     {
         Validate(mensagem);
+        DomainValidator.When(leituraSensorId == Guid.Empty, "LeituraSensorId cannot be empty");
         
         Tipo = tipo;
         Mensagem = mensagem;
         Gravidade = gravidade;
         ValorRegistado = valorRegistado;
+        LeituraSensorId = leituraSensorId;
         Timestamp = DateTime.UtcNow;
         Lida = false;
     }

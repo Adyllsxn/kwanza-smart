@@ -9,6 +9,14 @@ public sealed class LeituraSensorEntity : EntityBase
     public decimal NivelAgua { get; private set; }
     #endregion
 
+    #region Navigation Properties
+    private readonly List<AlertaEntity> _alertas = new();
+    public IReadOnlyCollection<AlertaEntity> Alertas => _alertas.AsReadOnly();
+    
+    private readonly List<ComandoEntity> _comandos = new();
+    public IReadOnlyCollection<ComandoEntity> Comandos => _comandos.AsReadOnly();
+    #endregion
+
     #region Constructors
     private LeituraSensorEntity() { }
 
@@ -21,6 +29,18 @@ public sealed class LeituraSensorEntity : EntityBase
         Ph = ph;
         Oxigenio = oxigenio;
         NivelAgua = nivelAgua;
+    }
+    #endregion
+
+    #region Domain Methods
+    public void AdicionarAlerta(AlertaEntity alerta)
+    {
+        _alertas.Add(alerta);
+    }
+    
+    public void AdicionarComando(ComandoEntity comando)
+    {
+        _comandos.Add(comando);
     }
     #endregion
 
