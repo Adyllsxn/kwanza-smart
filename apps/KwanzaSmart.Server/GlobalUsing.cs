@@ -16,3 +16,5 @@ global using System.Net;
 global using KwanzaSmart.Server.Source.Presentation.Common.Extensions;
 global using KwanzaSmart.Server.Source.Presentation.Common.Middleware;
 global using KwanzaSmart.Server.Source.Presentation.Enpoints;
+global using KwanzaSmart.Server.Source.Presentation.Common.Pipeline;
+global using KwanzaSmart.Server.Source.Presentation.Enpoints.System;

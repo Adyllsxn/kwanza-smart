@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.AddBuildPipelines();
+
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
-
+app.UseAppPipelines();
 app.Run();

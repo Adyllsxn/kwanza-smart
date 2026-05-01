@@ -6,8 +6,8 @@ public static class EndpointGroups
         var endpoint = app.MapGroup("");
 
         endpoint.MapGroup("/") 
-                .WithTags("Health Check"); 
-                //.MapEndpoint<SystemEndpoint>(););
+                .WithTags("Health Check")
+                .MapEndpoint<SystemEndpoint>();
     }
 
     private static  IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app) where TEndpoint: IEndpoint
