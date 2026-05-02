@@ -1,59 +1,193 @@
 ﻿@page "/"
 
-<div class="p-4 md:p-8">
+<div class="space-y-6">
     <!-- Header -->
-    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-black tracking-tight text-gray-950">
-                Kwanza<span class="text-blue-600 italic">Smart</span>
+            <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                Dashboard
             </h1>
-            <p class="text-gray-500 text-sm">Bem-vindo ao teu controlo financeiro.</p>
+            <p class="text-gray-500 text-sm mt-1 flex items-center gap-2">
+                <i class="fa-solid fa-circle text-green-500 text-[6px]"></i>
+                Monitorização em tempo real dos tanques
+            </p>
         </div>
         <div class="flex gap-2">
-            <Button Color="Color.Primary" Class="rounded-xl shadow-lg shadow-blue-200 py-3 px-6 font-bold flex items-center gap-2 hover:scale-105 transition-all">
-                <Icon Name="IconName.Add" /> Nova Venda
-            </Button>
+            <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-xl px-5 py-2.5 text-sm font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-600/20">
+                <i class="fa-solid fa-rotate"></i> Atualizar
+            </button>
         </div>
-    </header>
-
-    <!-- Stats Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-        @foreach (var stat in new[] { ("Saldo", "1.250.000", "text-green-600"), ("Saídas", "450.000", "text-red-500"), ("Pendente", "120.000", "text-orange-500"), ("Lucro", "680.000", "text-blue-600") })
-        {
-            <Card Class="border-none shadow-sm rounded-2xl p-2 bg-white">
-                <CardBody>
-                    <p class="text-xs uppercase font-bold text-gray-400 mb-1">@stat.Item1</p>
-                    <h2 class="text-2xl font-black @stat.Item3">@stat.Item2 <span class="text-xs font-normal">Kz</span></h2>
-                </CardBody>
-            </Card>
-        }
     </div>
 
-    <!-- Tabela de Movimentos -->
-    <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-5 border-b border-gray-50 flex justify-between items-center">
-            <h3 class="font-bold text-gray-800 text-lg">Movimentações Recentes</h3>
-            <Badge Color="Color.Light" Class="text-gray-500 px-3 py-1 rounded-full">Janeiro 2024</Badge>
+    <!-- Cards dos Sensores com border-radius arredondado (rounded-3xl = 24px) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Temperatura -->
+        <div class="group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm rounded-3xl p-5 border border-gray-700 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-gray-400 text-sm flex items-center gap-1">
+                    <i class="fa-solid fa-thermometer-half text-red-400"></i> Temperatura
+                </span>
+                <span class="text-red-400 text-xs bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Sensor #1</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-bold text-white">28.5</span>
+                <span class="text-gray-400">°C</span>
+            </div>
+            <div class="mt-2 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-green-500 text-[8px]"></i>
+                <span class="text-green-400 text-xs">Normal (22-28°C)</span>
+            </div>
+        </div>
+
+        <!-- pH -->
+        <div class="group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm rounded-3xl p-5 border border-gray-700 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-gray-400 text-sm flex items-center gap-1">
+                    <i class="fa-solid fa-flask text-purple-400"></i> pH
+                </span>
+                <span class="text-purple-400 text-xs bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">Sensor #2</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-bold text-white">7.2</span>
+            </div>
+            <div class="mt-2 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-green-500 text-[8px]"></i>
+                <span class="text-green-400 text-xs">Ideal (6.5-7.5)</span>
+            </div>
+        </div>
+
+        <!-- Oxigénio -->
+        <div class="group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm rounded-3xl p-5 border border-gray-700 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-gray-400 text-sm flex items-center gap-1">
+                    <i class="fa-solid fa-wind text-yellow-400"></i> Oxigénio
+                </span>
+                <span class="text-yellow-400 text-xs bg-yellow-500/10 px-2 py-0.5 rounded-full border border-yellow-500/20">Sensor #3</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-bold text-white">6.2</span>
+                <span class="text-gray-400">mg/L</span>
+            </div>
+            <div class="mt-2 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-yellow-500 text-[8px]"></i>
+                <span class="text-yellow-400 text-xs">Atenção (>5 mg/L)</span>
+            </div>
+        </div>
+
+        <!-- Nível da Água -->
+        <div class="group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm rounded-3xl p-5 border border-gray-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-gray-400 text-sm flex items-center gap-1">
+                    <i class="fa-solid fa-water text-cyan-400"></i> Nível
+                </span>
+                <span class="text-cyan-400 text-xs bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">Sensor #4</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-bold text-white">65</span>
+                <span class="text-gray-400">%</span>
+            </div>
+            <div class="mt-2 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-green-500 text-[8px]"></i>
+                <span class="text-green-400 text-xs">Normal (50-80%)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráfico + Alertas -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Gráfico -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-gray-900/80 to-gray-900/40 rounded-3xl p-5 border border-gray-700">
+            <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+                <div class="w-1 h-6 bg-blue-500 rounded-full"></div>
+                Histórico de Temperatura
+            </h3>
+            <div class="h-64 flex items-center justify-center text-gray-500 bg-gray-900/50 rounded-xl border border-gray-800">
+                <div class="text-center">
+                    <i class="fa-solid fa-chart-line text-4xl mb-2 opacity-30"></i>
+                    <p class="text-sm text-gray-500">Gráfico em tempo real</p>
+                    <p class="text-xs text-gray-600">(integração com SignalR)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alertas Rápidos -->
+        <div class="bg-gradient-to-br from-gray-900/80 to-gray-900/40 rounded-3xl p-5 border border-gray-700">
+            <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+                <div class="w-1 h-6 bg-yellow-500 rounded-full"></div>
+                <i class="fa-solid fa-bell text-yellow-500"></i>
+                Alertas Recentes
+            </h3>
+            <div class="space-y-3">
+                <div class="bg-red-500/5 border-l-4 border-red-500 rounded-xl p-3 hover:bg-red-500/10 transition-all">
+                    <p class="text-red-400 text-sm font-medium">⚠️ Temperatura elevada</p>
+                    <p class="text-red-300/70 text-xs mt-1">32°C - Acima do limite recomendado</p>
+                    <span class="text-gray-500 text-xs mt-1 block">Há 2 minutos</span>
+                </div>
+                <div class="bg-yellow-500/5 border-l-4 border-yellow-500 rounded-xl p-3 hover:bg-yellow-500/10 transition-all">
+                    <p class="text-yellow-400 text-sm font-medium">⚠️ Oxigénio baixo</p>
+                    <p class="text-yellow-300/70 text-xs mt-1">4.8 mg/L - Ativar bomba de oxigénio</p>
+                    <span class="text-gray-500 text-xs mt-1 block">Há 5 minutos</span>
+                </div>
+                <div class="bg-green-500/5 border-l-4 border-green-500 rounded-xl p-3 hover:bg-green-500/10 transition-all">
+                    <p class="text-green-400 text-sm font-medium">✓ Sistema OK</p>
+                    <p class="text-green-300/70 text-xs mt-1">Todos os parâmetros dentro da normalidade</p>
+                    <span class="text-gray-500 text-xs mt-1 block">Há 10 minutos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Últimas Leituras -->
+    <div class="bg-gradient-to-br from-gray-900/80 to-gray-900/40 rounded-3xl p-5 border border-gray-700">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="font-semibold text-white flex items-center gap-2">
+                <div class="w-1 h-6 bg-blue-500 rounded-full"></div>
+                <i class="fa-solid fa-table-list text-blue-500"></i>
+                Últimas Leituras
+            </h3>
+            <button class="text-blue-400 text-sm hover:text-blue-300 transition-colors flex items-center gap-1">
+                Ver todas <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
         </div>
         <div class="overflow-x-auto">
             <table class="w-full text-left">
-                <thead class="bg-gray-50/50 text-[11px] uppercase font-bold text-gray-400">
+                <thead class="text-gray-500 text-xs uppercase border-b border-gray-700">
                     <tr>
-                        <th class="px-6 py-4">Data</th>
-                        <th class="px-6 py-4">Descrição</th>
-                        <th class="px-6 py-4 text-right">Valor</th>
+                        <th class="pb-3 font-medium px-3">Data/Hora</th>
+                        <th class="pb-3 font-medium px-3">🌡️ Temperatura</th>
+                        <th class="pb-3 font-medium px-3">🧪 pH</th>
+                        <th class="pb-3 font-medium px-3">💨 Oxigénio</th>
+                        <th class="pb-3 font-medium px-3">💧 Nível</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-50">
-                    <tr class="hover:bg-gray-50/80 transition-colors">
-                        <td class="px-6 py-4 text-sm text-gray-500">Hoje, 14:20</td>
-                        <td class="px-6 py-4 font-semibold text-gray-800 italic">Venda de Software</td>
-                        <td class="px-6 py-4 text-right text-green-600 font-black">+ 45.000 Kz</td>
+                <tbody class="text-gray-300 text-sm divide-y divide-gray-800">
+                    <tr class="hover:bg-gray-800/30 transition-colors">
+                        <td class="py-3 px-3">Hoje, 16:20</td>
+                        <td class="py-3 px-3"><span class="text-white font-medium">28.5°C</span></td>
+                        <td class="py-3 px-3">7.2</td>
+                        <td class="py-3 px-3">6.2 mg/L</td>
+                        <td class="py-3 px-3">65%</td>
                     </tr>
-                    <tr class="hover:bg-gray-50/80 transition-colors">
-                        <td class="px-6 py-4 text-sm text-gray-500">Ontem, 09:15</td>
-                        <td class="px-6 py-4 font-semibold text-gray-800 italic">Internet Unitel</td>
-                        <td class="px-6 py-4 text-right text-red-500 font-black">- 12.500 Kz</td>
+                    <tr class="hover:bg-gray-800/30 transition-colors">
+                        <td class="py-3 px-3">Hoje, 15:50</td>
+                        <td class="py-3 px-3"><span class="text-white font-medium">28.1°C</span></td>
+                        <td class="py-3 px-3">7.1</td>
+                        <td class="py-3 px-3">6.5 mg/L</td>
+                        <td class="py-3 px-3">67%</td>
+                    </tr>
+                    <tr class="hover:bg-gray-800/30 transition-colors">
+                        <td class="py-3 px-3">Hoje, 15:20</td>
+                        <td class="py-3 px-3"><span class="text-white font-medium">29.2°C</span></td>
+                        <td class="py-3 px-3">7.3</td>
+                        <td class="py-3 px-3">5.8 mg/L</td>
+                        <td class="py-3 px-3">64%</td>
+                    </tr>
+                    <tr class="hover:bg-gray-800/30 transition-colors">
+                        <td class="py-3 px-3">Hoje, 14:50</td>
+                        <td class="py-3 px-3"><span class="text-white font-medium">27.8°C</span></td>
+                        <td class="py-3 px-3">7.0</td>
+                        <td class="py-3 px-3">6.8 mg/L</td>
+                        <td class="py-3 px-3">68%</td>
                     </tr>
                 </tbody>
             </table>
