@@ -5,8 +5,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KwanzaSmart</title>
-  <base href="/kwanza-smart" />
-  <link href="_framework/dotnet.xt1nqabulf.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-+6QIiLED6m2nIaiamw06mr2tGu4yA3hXVOv0fMZQWXY=" />
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var basePath = path.substring(0, path.lastIndexOf('/') + 1);
+      var baseElement = document.createElement('base');
+      baseElement.href = basePath;
+      document.head.appendChild(baseElement);
+    })();
+  </script>
+  <link href="_framework/dotnet.k7f449h50g.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-AEIfRZg2dtiL7bojXHGn1HwoDpbz+gSgpTB8+UTCYuY=" />
   <link rel="stylesheet" href="css/app.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
@@ -21,20 +29,20 @@
   <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.zxhwjtv6sc.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.k7f449h50g.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.mx9wzm9o5h.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.2zl32tp6ah.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.xt1nqabulf.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.2zl32tp6ah.js"
   },
   "scopes": {},
   "integrity": {
     "./_framework/blazor.webassembly.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
     "./_framework/blazor.webassembly.zxhwjtv6sc.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
-    "./_framework/dotnet.js": "sha256-+6QIiLED6m2nIaiamw06mr2tGu4yA3hXVOv0fMZQWXY=",
+    "./_framework/dotnet.js": "sha256-AEIfRZg2dtiL7bojXHGn1HwoDpbz+gSgpTB8+UTCYuY=",
+    "./_framework/dotnet.k7f449h50g.js": "sha256-AEIfRZg2dtiL7bojXHGn1HwoDpbz+gSgpTB8+UTCYuY=",
     "./_framework/dotnet.native.js": "sha256-tlrn00yvndmJzhFdKpELUlytdgWFyGFdTWjI10bgILU=",
     "./_framework/dotnet.native.mx9wzm9o5h.js": "sha256-tlrn00yvndmJzhFdKpELUlytdgWFyGFdTWjI10bgILU=",
     "./_framework/dotnet.runtime.2zl32tp6ah.js": "sha256-/ndm/PF1BeBT5mXzYAES79wNK5sIZIQKAGcUqPL9ZP8=",
-    "./_framework/dotnet.runtime.js": "sha256-/ndm/PF1BeBT5mXzYAES79wNK5sIZIQKAGcUqPL9ZP8=",
-    "./_framework/dotnet.xt1nqabulf.js": "sha256-+6QIiLED6m2nIaiamw06mr2tGu4yA3hXVOv0fMZQWXY="
+    "./_framework/dotnet.runtime.js": "sha256-/ndm/PF1BeBT5mXzYAES79wNK5sIZIQKAGcUqPL9ZP8="
   }
 }</script>
 </head>
@@ -51,7 +59,7 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
   </div>
-  <script src="_framework/blazor.webassembly.zxhwjtv6sc.js"></script>
+  <script src="_framework/blazor.webassembly.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
