@@ -8,6 +8,6 @@ public static class SignalRExtensions
 
     public static void UseSignalRExtensions(this WebApplication app)
     {
-        //app.MapHub<ChatHub>("/chat");
+        app.MapHub<AquariumHub>("/aquarium-hub");
     }
 }
