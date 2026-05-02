@@ -2,48 +2,87 @@ namespace KwanzaSmart.Server.Source.Infrastructure.Services;
 
 public class ComandoService : IComandoService
 {
-    public Task<ComandoEntity> ExecutarComandoAsync(ComandoEntity comando, CancellationToken cancellationToken)
+    #region Dependencies
+    private readonly AppDbContext _context;
+    private readonly IUnitOfWork _uow;
+
+    public ComandoService(AppDbContext context, IUnitOfWork uow)
     {
-        throw new NotImplementedException();
+        _context = context;
+        _uow = uow;
+    }
+    #endregion
+
+    #region Read Methods
+    public async Task<IReadOnlyList<ComandoEntity>> GetAllAsync(CancellationToken cancellationToken)
+    {
+        return await _context.Comandos
+            .OrderByDescending(x => x.Timestamp)
+            .ToListAsync(cancellationToken);
     }
 
-    public Task<ComandoEntity> ExecutarComandoAutomaticoAsync(TipoComando tipo, AcaoComando acao, CancellationToken cancellationToken)
+    public async Task<ComandoEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _context.Comandos
+            .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
 
-    public Task<ComandoEntity> ExecutarComandoManualAsync(TipoComando tipo, AcaoComando acao, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ComandoEntity>> GetPorTipoAsync(TipoComando tipo, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _context.Comandos
+            .Where(x => x.Tipo == tipo)
+            .OrderByDescending(x => x.Timestamp)
+            .ToListAsync(cancellationToken);
     }
 
-    public Task<IReadOnlyList<ComandoEntity>> GetAllAsync(CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ComandoEntity>> GetPorPeriodoAsync(DateTime inicio, DateTime fim, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _context.Comandos
+            .Where(x => x.Timestamp >= inicio && x.Timestamp <= fim)
+            .OrderBy(x => x.Timestamp)
+            .ToListAsync(cancellationToken);
     }
 
-    public Task<ComandoEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<ComandoEntity?> GetUltimoComandoPorTipoAsync(TipoComando tipo, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _context.Comandos
+            .Where(x => x.Tipo == tipo)
+            .OrderByDescending(x => x.Timestamp)
+            .FirstOrDefaultAsync(cancellationToken);
     }
 
-    public Task<IReadOnlyList<ComandoEntity>> GetComandosRecentesAsync(int ultimosMinutos, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ComandoEntity>> GetComandosRecentesAsync(int ultimosMinutos, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var cutoff = DateTime.UtcNow.AddMinutes(-ultimosMinutos);
+        return await _context.Comandos
+            .Where(x => x.Timestamp >= cutoff)
+            .OrderByDescending(x => x.Timestamp)
+            .ToListAsync(cancellationToken);
+    }
+    #endregion
+
+    #region Write Methods
+    public async Task<ComandoEntity> ExecutarComandoAsync(ComandoEntity comando, CancellationToken cancellationToken)
+    {
+        await _context.Comandos.AddAsync(comando, cancellationToken);
+        await _uow.SaveChangesAsync(cancellationToken);
+        return comando;
     }
 
-    public Task<IReadOnlyList<ComandoEntity>> GetPorPeriodoAsync(DateTime inicio, DateTime fim, CancellationToken cancellationToken)
+    public async Task<ComandoEntity> ExecutarComandoManualAsync(TipoComando tipo, AcaoComando acao, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var comando = new ComandoEntity(tipo, acao, "Manual");
+        await _context.Comandos.AddAsync(comando, cancellationToken);
+        await _uow.SaveChangesAsync(cancellationToken);
+        return comando;
     }
 
-    public Task<IReadOnlyList<ComandoEntity>> GetPorTipoAsync(TipoComando tipo, CancellationToken cancellationToken)
+    public async Task<ComandoEntity> ExecutarComandoAutomaticoAsync(TipoComando tipo, AcaoComando acao, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var comando = new ComandoEntity(tipo, acao, "Automático");
+        await _context.Comandos.AddAsync(comando, cancellationToken);
+        await _uow.SaveChangesAsync(cancellationToken);
+        return comando;
     }
-
-    public Task<ComandoEntity?> GetUltimoComandoPorTipoAsync(TipoComando tipo, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    #endregion
 }

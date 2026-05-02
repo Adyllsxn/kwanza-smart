@@ -14,4 +14,8 @@
     <ProjectReference Include="../KwanzaSmart.ServiceDefaults/KwanzaSmart.ServiceDefaults.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.2.4" />
+  </ItemGroup>
+
 </Project>
