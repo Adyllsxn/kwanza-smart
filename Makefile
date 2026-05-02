@@ -7,6 +7,10 @@ run:
 build:
 	dotnet build
 
+.PHONY: restore
+restore:
+	dotnet restore
+
 .PHONY: clean
 clean:
 	dotnet clean

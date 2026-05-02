@@ -18,3 +18,4 @@ global using KwanzaSmart.Server.Source.Presentation.Common.Middleware;
 global using KwanzaSmart.Server.Source.Presentation.Enpoints;
 global using KwanzaSmart.Server.Source.Presentation.Common.Pipeline;
 global using KwanzaSmart.Server.Source.Presentation.Enpoints.System;
+global using Microsoft.EntityFrameworkCore.Design;

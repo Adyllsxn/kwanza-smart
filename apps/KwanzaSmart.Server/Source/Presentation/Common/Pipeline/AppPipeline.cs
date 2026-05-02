@@ -6,7 +6,6 @@ public static class AppPipeline
         app.UseMiddleware<ExceptionHandlingMiddleware>(); 
         app.UseHttpsRedirection(); 
         app.UseCorsExtensions(); 
-        app.UseRateLimiter();  
         app.UseUiDocExtensions(); 
         app.MapEndpoints();
         app.UseSignalRExtensions();
