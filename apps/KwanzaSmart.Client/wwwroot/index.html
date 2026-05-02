@@ -5,7 +5,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KwanzaSmart</title>
-  <base href="/kwanza-smart" />
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var basePath = path.substring(0, path.lastIndexOf('/') + 1);
+      var baseElement = document.createElement('base');
+      baseElement.href = basePath;
+      document.head.appendChild(baseElement);
+    })();
+  </script>
   <link rel="preload" id="webassembly" />
   <link rel="stylesheet" href="css/app.css" />
 
@@ -33,7 +41,7 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
   </div>
-  <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+  <script src="_framework/blazor.webassembly.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
