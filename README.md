@@ -47,7 +47,7 @@
 ---
 
 ## 📸 Demo
-<div align="left"> <img src="./docs/assets/demo.png" alt="KwanzaSmart Dashboard" width="65%" /> <br /> <i>Interface principal com gráficos de temperatura, pH e alertas em tempo real</i> </div>
+<div align="center"> <img src="./docs/assets/demo.svg" alt="KwanzaSmart Dashboard" width="65%" /> <br /> <i>Interface principal com gráficos de temperatura, pH e alertas em tempo real</i> </div>
 
 ---
 
