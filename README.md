@@ -17,11 +17,11 @@
 
 ---
 
-## 📖 Sobre o Projeto
+## **📖 SOBRE O PROJETO**
 
 > O **KwanzaSmart** é um sistema inteligente de monitorização de aquicultura desenvolvido para evitar mortandade de peixes por falta de monitorização. Dados da água em tempo real, alertas automáticos e automatização de tanques para pequenos e médios produtores.
 
-### 🎯 Problemática
+### **🎯 Problemática**
 
 ```markdown
 ⚠️ Produtores perdem peixes por não monitorizar a água em tempo real
@@ -29,7 +29,7 @@
 ⚠️ Soluções existentes são caras ou de difícil manutenção
 ```
 
-### 💡 Solução
+### **💡 Solução**
 
 ```markdown
 ✅ Sensores + PIC enviam dados em tempo real
@@ -39,7 +39,7 @@
 
 ---
 
-## 🛠️ Tecnologias
+## **🛠️ TECNOLOGIAS**
 
 | Camada | Tecnologias |
 |--------|-------------|
@@ -50,12 +50,12 @@
 ---
 
 
-## 📸 Demo
+## **📸 DEMO**
 <div align="center"> <img src="./docs/assets/demo.svg" alt="KwanzaSmart Dashboard" width="65%" /> <br /> <i>Interface principal com gráficos de temperatura, pH e alertas em tempo real</i> </div>
 
 ---
 
-## 📄 Licença
+## **📄 LICENÇA**
 
 > Este projeto está sob a licença MIT, o que significa que é de código aberto e pode ser utilizado livremente para fins académicos e comerciais, desde que mantidos os créditos.
 
