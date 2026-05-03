@@ -5,6 +5,7 @@
   
   [![GitHub](https://img.shields.io/badge/github-kwanza--smart-181717?style=for-the-badge&logo=github)](https://github.com/Adyllsxn/kwanza-smart)
   [![Site](https://img.shields.io/badge/demo-site-4c1?style=for-the-badge&logo=githubpages&logoColor=white)](https://adyllsxn.github.io/kwanza-smart/)
+  [![Setup](https://img.shields.io/badge/Hardware-PIC%20%26%20Sensores-FF9800?style=for-the-badge)](./docs/SETUP.md)
   [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
   
   <br/>
@@ -38,13 +39,16 @@
 
 ---
 
-## 📚 Documentação
+## 🛠️ Tecnologias
 
-[![Funcionalidades](https://img.shields.io/badge/Funcionalidades-Detalhamento-4CAF50?style=for-the-badge)](./docs/FEATURES.md) <br>
-[![Tecnologias](https://img.shields.io/badge/Tecnologias-Stack-00ACC1?style=for-the-badge)](./docs/TECH.md) <br>
-[![Hardware](https://img.shields.io/badge/Hardware-PIC%20%26%20Sensores-FF9800?style=for-the-badge)](./docs/HARDWARE.md)
+| Camada | Tecnologias |
+|--------|-------------|
+| **Backend** | C# .NET 10, ASP.NET Core, Entity Framework Core, PostgreSQL, SignalR, Scalar |
+| **Frontend** | Blazor WebAssembly, Blazorise Tailwind, Blazorise Icons FontAwesome |
+| **Hardware** | PIC18F4550, ESP8266, DS18B20 (Temperatura), SEN0161 (pH), DO-9542 (Oxigénio), HC-SR04 (Nível) |
 
 ---
+
 
 ## 📸 Demo
 <div align="center"> <img src="./docs/assets/demo.svg" alt="KwanzaSmart Dashboard" width="65%" /> <br /> <i>Interface principal com gráficos de temperatura, pH e alertas em tempo real</i> </div>
