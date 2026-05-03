@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./docs/assets/logo.svg" alt="KwanzaSmart Logo" width="40%" />
 
-  **Sistema inteligente de monitorização de aquicultura para Angola**
+  **Sistema inteligente de monitorização de aquicultura**
   
   [![GitHub](https://img.shields.io/badge/github-kwanza--smart-181717?style=for-the-badge&logo=github)](https://github.com/Adyllsxn/kwanza-smart)
   [![Site](https://img.shields.io/badge/demo-site-4c1?style=for-the-badge&logo=githubpages&logoColor=white)](https://adyllsxn.github.io/kwanza-smart/)
@@ -11,21 +11,21 @@
   
   > Sensores + backend C# + dashboard em tempo real.  
   > Monitoriza temperatura, pH, oxigénio, nível e turbidez da água.  
-  > Alertas automáticos e controlo inteligente para aquicultura em Angola.
+  > Alertas automáticos e controlo inteligente para aquicultura.
 </div>
 
 ---
 
 ## 📖 Sobre o Projeto
 
-> O **KwanzaSmart** é um sistema inteligente de monitorização de aquicultura desenvolvido para evitar mortandade de peixes por falta de monitorização. Dados da água em tempo real, alertas automáticos e automatização de tanques para pequenos e médios produtores em Angola.
+> O **KwanzaSmart** é um sistema inteligente de monitorização de aquicultura desenvolvido para evitar mortandade de peixes por falta de monitorização. Dados da água em tempo real, alertas automáticos e automatização de tanques para pequenos e médios produtores.
 
 ### 🎯 Problemática
 
 ```markdown
-⚠️ Piscicultores perdem peixes por não monitorizar a água em tempo real
+⚠️ Produtores perdem peixes por não monitorizar a água em tempo real
 ⚠️ Falta de alertas automáticos quando parâmetros saem do ideal
-⚠️ Soluções existentes são caras ou de difícil manutenção em Angola
+⚠️ Soluções existentes são caras ou de difícil manutenção
 ```
 
 ### 💡 Solução
@@ -57,7 +57,6 @@
 
 ```markdown
 📚 Código aberto (open source)
-✅ Livre para uso académico
-✅ Livre para uso comercial com atribuição
+✅ Livre para uso académico e comercial
 🤝 Contribuições são bem-vindas
 ```
