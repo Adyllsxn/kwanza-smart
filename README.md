@@ -61,6 +61,6 @@
 
 ```markdown
 📚 Código aberto (open source)
-✅ Livre para uso académico e comercial
+✅ Livre para uso académico
 🤝 Contribuições são bem-vindas
 ```
